@@ -26,7 +26,7 @@
             decimal min = 1.0m;  // Minimum value
             decimal max = 100.0m; // Maximum value
 
-            var data = new List<HubMessage>() { 
+            List<HubMessage> data = [
                 new() { Currency = "USD", Value = Math.Round((decimal)rng.NextDouble() * (max - min) + min, 2) },
                 new () { Currency = "EUR", Value =Math.Round((decimal)rng.NextDouble() * (max - min) + min, 2) },
                 new () { Currency = "JPY", Value = Math.Round((decimal) rng.NextDouble() *(max - min) + min, 2) },
@@ -38,8 +38,8 @@
                 new () { Currency = "SEK", Value = Math.Round((decimal) rng.NextDouble() *(max - min) + min, 2) },
                 new () { Currency = "NZD", Value = Math.Round((decimal) rng.NextDouble() *(max - min) + min, 2) },
 
-            };
-            _hubContext.Clients.All.SendAsync("ReceiveMessage",data);
+            ];
+            _hubContext.Clients.All.SendAsync("ReceiveMessage", data);
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
