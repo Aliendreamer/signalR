@@ -2,7 +2,7 @@
 {
     public class HubMessage
     {
-        public string Currency { get; set; }
-        public decimal Value { get; set; }
+        public string Currency { get; init; } = string.Empty;
+        public decimal Value { get; init; }
     }
 }
