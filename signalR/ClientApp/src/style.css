@@ -1,0 +1,41 @@
+﻿body {
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+
+.content {
+    border: dashed 1px #ccc;
+    border-radius: 5px;
+    width: 50%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: lightblue;
+    overflow: hidden;
+    position: relative;
+}
+.text {
+    position: absolute;
+    white-space: nowrap;
+    animation: scrollText 10s linear infinite;
+    top:20%;
+    
+}
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%); /* Start from right side */
+}
+
+    100% {
+        transform: translateX(-100%); /* End at left side */
+    }
+}
